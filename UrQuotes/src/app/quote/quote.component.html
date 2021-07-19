@@ -1,5 +1,13 @@
-<div class="container">
-  
+<div>
+  <h1>Home of Inspirational Quotes</h1>
+  <hr> 
+
+  <div *ngFor='let quote of quotes'>
+    {{quote.quote}}
+    <app-quote-detail [quote]='quote'></app-quote-detail>
+  </div>
+
+
 </div>
 
 

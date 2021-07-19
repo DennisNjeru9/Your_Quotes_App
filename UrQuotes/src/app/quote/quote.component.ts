@@ -16,6 +16,10 @@ export class QuoteComponent implements OnInit {
     new Quote (5, 'When one door of happiness closes, another opens; but often we look so long at the closed door that we do not see the one which has been opened for us.', 'Helen Keller', 'Vivian Saumu'),
   ];
 
+  toggleDetails(index:any){
+    this.quotes[index].showAuthorAndSubmitter = !this.quotes[index].showAuthorAndSubmitter;
+  }
+
   constructor() { }
 
   ngOnInit(): void {
