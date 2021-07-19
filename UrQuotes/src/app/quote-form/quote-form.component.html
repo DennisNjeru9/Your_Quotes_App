@@ -2,11 +2,11 @@
   <h3 class="text-center">Add a quote</h3>
   <hr>
 
-  <form (ngSubmit)='submitQuote()' #goalForm='ngForm'>
+  <form (ngSubmit)='submitQuote()' #quoteForm='ngForm'>
     <div class="form-group">
       <label for="quote">Quote</label>
       <input type="text" class="form-control" id="quote" rows="7" [(ngModel)]="newQuote.quote" name="quote" #quotes="ngModel" required>
-      <div [hidden]="quote.valid || quote.pristine" class="alert alert-danger"></div>
+      <div [hidden]="quotes.valid || quotes.pristine" class="alert alert-danger"></div>
       <p>Quote is required</p>
     </div>
 
