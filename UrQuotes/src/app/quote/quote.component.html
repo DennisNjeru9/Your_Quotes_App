@@ -2,12 +2,11 @@
   <h1>Home of Inspirational Quotes</h1>
   <hr> 
 
-  <div *ngFor='let quote of quotes'>
-    {{quote.quote}}
-    <app-quote-detail [quote]='quote'></app-quote-detail>
+  <div *ngFor='let quote of quotes; let i = index'>
+    <li>{{quote.quote}}</li>
+    <button (click)='displayDetails(i)'>Display Details</button>
+    <app-quote-detail *ngIf='quote.showAuthorAndSubmitter' [quote]='quote' (isComplete)='deleteQuote($event, i)'></app-quote-detail>
   </div>
-
-
 </div>
 
 

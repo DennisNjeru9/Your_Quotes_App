@@ -16,8 +16,18 @@ export class QuoteComponent implements OnInit {
     new Quote (5, 'When one door of happiness closes, another opens; but often we look so long at the closed door that we do not see the one which has been opened for us.', 'Helen Keller', 'Vivian Saumu'),
   ];
 
-  toggleDetails(index:any){
+  displayDetails(index:any){
     this.quotes[index].showAuthorAndSubmitter = !this.quotes[index].showAuthorAndSubmitter;
+  }
+
+  deleteQuote(isComplete:any, index:any){
+    if(isComplete){
+      let toDelete = confirm(`Are you sure you want to delete ${this.quotes[index].quote}?`)
+
+      if(toDelete){
+        this.quotes.splice(index, 1);
+      }
+    }
   }
 
   constructor() { }
