@@ -6,6 +6,7 @@
     <div class="card-body">
       <div *ngFor='let quote of quotes; let i = index'>
         <li>{{quote.quote}}</li>
+        <!-- <p>This quote was posted on {{quote.dateEntered| date}}</p> -->
         <button (click)='displayDetails(i)' class="btn btn-primary">Display Details</button>
         <app-quote-detail *ngIf='quote.showAuthorAndSubmitter' [quote]='quote' (isComplete)='deleteQuote($event, i)'></app-quote-detail>
       </div>
