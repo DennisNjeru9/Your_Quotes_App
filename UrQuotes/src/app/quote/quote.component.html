@@ -9,13 +9,13 @@
   </div>
   <div class="row">
     <div *ngFor='let quote of quotes; let i = index' class="col-md-4">
-      <div class="card text-white bg-dark h-100">
+      <div class="card text-black bg-dark h-100">
         <div class="card-header text-center">
           Quote
         </div>
         <div class="card-body text-center">
           <p>{{quote.quote}}</p>
-          <button (click)='displayDetails(i)' class="btn btn-primary">Display Details</button>
+          <button (click)='displayDetails(i)' class="btn btn-primary text-black">Display Details</button>
         </div>
         <div class="card-footer text-center">
           <app-quote-detail *ngIf='quote.showAuthorAndSubmitter' [quote]='quote' (isComplete)='deleteQuote($event, i)'></app-quote-detail>
